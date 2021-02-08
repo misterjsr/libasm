@@ -6,7 +6,7 @@
 #    By: jeserran <jeserran@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/06 02:24:04 by jeserran          #+#    #+#              #
-#    Updated: 2021/02/06 03:01:42 by jeserran         ###   ########.fr        #
+#    Updated: 2021/02/08 09:16:19 by jeserran         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,10 @@ endif
 
 SRC =			ft_strlen.s \
 				ft_strcpy.s \
+				ft_strcmp.s \
+				ft_read.s \
+				ft_write.s \
+				ft_strdup.s
 
 SRCS =			$(addprefix $(SRC_DIR), $(SRC))
 
