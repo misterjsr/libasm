@@ -6,7 +6,7 @@
 /*   By: jeserran <jeserran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 13:04:20 by jeserran          #+#    #+#             */
-/*   Updated: 2021/02/08 12:58:19 by jeserran         ###   ########.fr       */
+/*   Updated: 2021/02/08 13:24:50 by jeserran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,7 +147,7 @@ int main(void){
         "./README.md",
         "./sources/ft_strlen.s",
         "./sources/ft_write.s",
-        "./sources/ft_read.s",
+        "./test.txt",
         "./not_exist"
     };
     printf("\n\n==================================\n");

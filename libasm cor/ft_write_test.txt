@@ -1,2 +1,0 @@
-create file(ft_write_test) with rdwr
-create file(ft_write_test) with rdwr
