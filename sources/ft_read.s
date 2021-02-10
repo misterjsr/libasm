@@ -8,8 +8,10 @@ _ft_read:
 	jc 		error
 	ret
 error:
-	push 	rax
-	call 	___error
-	pop 	qword [rax]
-	mov 	rax, -1
-	ret
+		mov		r15, rax
+		push	r15
+		call	___error
+		pop		r15
+		mov		[rax], r15
+		mov		rax, -1
+		ret

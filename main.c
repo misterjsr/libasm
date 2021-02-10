@@ -6,7 +6,7 @@
 /*   By: jeserran <jeserran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 13:04:20 by jeserran          #+#    #+#             */
-/*   Updated: 2021/02/08 13:24:50 by jeserran         ###   ########.fr       */
+/*   Updated: 2021/02/10 12:47:26 by jeserran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,6 @@ void test_read(char *file, int nb)
     (i == j ? printf(GREEN) : printf(RED));
     printf("   read %d: %s\n", i, buff1);
     printf("ft_read %d: %s\n", j, buff2);
-	printf("errno %d", errno);
     printf(RESET);
 }
 
@@ -175,16 +174,23 @@ int main(void){
     printf("==    ft_write    ==\n");
     printf("====================\n");
     i = -1;
-    while (++i < 4)
-        test_write(fd[i], i);
+    while (++i < 4){
+        errno = -1;
+        test_write(fd[i], i);    
+        if (errno != -1)
+            printf("errno %d", errno);
+    }
     printf("\n");
     printf("====================\n");
     printf("==    ft_read    ==\n");
     printf("====================\n");
     i = -1;
-    while (++i < 5)
+    while (++i < 5){
+        errno = -1;
         test_read(file[i], i);
-	printf("%d", errno);
+        if (errno != -1)
+            printf("errno %d", errno);
+    }   
     printf("\n");
     printf("====================\n");
     printf("==    ft_strdup   ==\n");

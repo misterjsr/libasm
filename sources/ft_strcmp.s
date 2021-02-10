@@ -7,7 +7,11 @@ _ft_strcmp:
 
     loop:
             inc     rcx
+            cmp		byte[rdi + rcx], 0
+			je		s1_null	
             mov	    dl, byte [rdi + rcx]
+            cmp		byte[rsi + rcx], 0		
+			je		first
 		    mov	    dh, byte [rsi + rcx]
             cmp     dl, dh
             jg      first
@@ -20,5 +24,13 @@ _ft_strcmp:
             ret
     second:
             mov     rax, -1
-            ret     
+            ret   
+    s1_null:
+            cmp		byte[rsi + rcx], 0
+            jz      same
+            jmp     second
+            ret
+    same:
+            mov     rax, 0
+            ret
 
